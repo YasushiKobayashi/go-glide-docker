@@ -5,7 +5,7 @@ machine:
 
 dependencies:
   pre:
-    - docker pull golag:1.8
+    - docker pull golang:1.8
 
 test:
   override:
