@@ -1,5 +1,7 @@
-FROM golang:1.8
-MAINTAINER Yasushi Kobayashi <ptpadan@gmail.com>
+FROM golang:1.10.0
+MAINTAINER Yasushi kobayashi <kobayashi.yasushi@t-clue.com>
 
-RUN curl https://glide.sh/get | sh
-
+ENV TZ=Asia/Tokyo
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+RUN curl https://glide.sh/get | sh && \
+  go get github.com/eure/kamimai/cmd/kamimai
